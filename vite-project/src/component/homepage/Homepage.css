@@ -1,0 +1,160 @@
+/* === Homepage Container: Adjusts based on sidebar === */
+.homepage {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff;
+  padding-top: 60px; /* Space for navbar */
+  transition: padding-left 0.3s ease;
+}
+
+/* If sidebar is visible */
+.homepage.with-sidebar {
+  padding-left: 240px;
+}
+
+/* If sidebar is hidden or compact */
+.homepage.without-sidebar {
+  padding-left: 70px;
+}
+
+/* === Category Options Bar === */
+.homepage-options {
+  display: flex;
+  gap: 12px;
+  padding: 16px 20px;
+  overflow-x: auto;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #fff;
+  scrollbar-width: none;
+}
+
+.homepage-options::-webkit-scrollbar {
+  display: none;
+}
+
+.homepage-option {
+  background-color: #f2f2f2;
+  padding: 8px 16px;
+  border-radius: 20px;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.homepage-option:hover {
+  background-color: #e2e2e2;
+}
+
+/* === Video Grid === */
+.homepage-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* === Video Card === */
+.youtube-video {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+}
+
+.youtube-video:hover {
+  transform: scale(1.02);
+}
+
+/* === Thumbnail === */
+.thumbnail {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.timing {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* === Video Info === */
+.video-details {
+  padding-top: 10px;
+}
+
+.video-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 4px 0;
+  color: #000;
+}
+
+.video-channel,
+.video-views {
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* === Responsive Tweaks === */
+@media (max-width: 1024px) {
+  .homepage.with-sidebar {
+    padding-left: 0;
+  }
+
+  .homepage.without-sidebar {
+    padding-left: 0;
+  }
+
+  .homepage-content {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .homepage-options {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .homepage-option {
+    font-size: 13px;
+    padding: 6px 14px;
+  }
+
+  .video-title {
+    font-size: 14px;
+  }
+
+  .video-channel,
+  .video-views {
+    font-size: 12px;
+  }
+
+  .homepage-content {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 14px;
+    padding: 12px;
+  }
+}

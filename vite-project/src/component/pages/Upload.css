@@ -1,0 +1,82 @@
+.upload {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+}
+
+.upload.without {
+  margin-left: 0;
+}
+
+.upload-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.upload-card h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.upload-form input,
+.upload-form textarea {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: none;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.upload-form input:focus,
+.upload-form textarea:focus {
+  border-color: #0073e6;
+}
+
+.upload-form button {
+  background-color: #ff0000;
+  color: white;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.upload-form button:hover {
+  background-color: #cc0000;
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  .upload-card {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .upload-form input,
+  .upload-form textarea {
+    font-size: 0.95rem;
+  }
+
+  .upload-form button {
+    font-size: 0.95rem;
+  }
+}

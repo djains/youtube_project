@@ -1,0 +1,278 @@
+/* Main container */
+.video,
+.without {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 60px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  transition: padding-left 0.3s ease;
+}
+
+/* Padding if sidebar is shown */
+.video {
+  padding-left: 240px;
+}
+
+/* Padding if sidebar is hidden */
+.without {
+  padding-left: 70px;
+}
+
+/* Layout split: video + sidebar */
+.videopost {
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Left side: video and details */
+.videocontent {
+  flex: 2.5;
+}
+
+/* Video Player */
+.video-player {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  border-radius: 10px;
+  background: #000;
+}
+
+/* Video details */
+.video-details {
+  margin-top: 16px;
+}
+
+.video-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #111;
+}
+
+.video-views {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.video-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.action-btn {
+  background-color: #f2f2f2;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.action-btn:hover {
+  background-color: #e0e0e0;
+}
+
+/* Channel Info */
+.channel-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.channel-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.channel-name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.channel-subs {
+  font-size: 13px;
+  color: #777;
+}
+
+.subscribe-btn {
+  margin-left: auto;
+  background-color: red;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.video-description {
+  font-size: 14px;
+  margin-top: 8px;
+  color: #444;
+}
+
+/* Comments Section */
+.comments-section {
+  margin-top: 30px;
+}
+
+.comments-section h3 {
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.comment-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.comment-btn {
+  background-color: #065fd4;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 18px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.comment-btn:hover {
+  background-color: #054ab2;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.comment > div {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.comment img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.comment-user {
+  font-weight: 600;
+  font-size: 14px;
+  color: #111;
+  margin-bottom: 2px;
+}
+
+.comment-text {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Right side: suggestions */
+.suggestion {
+  flex: 1.2;
+}
+
+.suggestioncontent h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.suggestion-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.suggestion-thumbnail {
+  width: 140px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.suggestion-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
+}
+
+.suggestion-channel {
+  font-size: 13px;
+  color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .video,
+  .without {
+    padding-left: 0;
+  }
+
+  .videopost {
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .suggestion {
+    width: 100%;
+  }
+
+  .suggestion-thumbnail {
+    width: 120px;
+    height: 70px;
+  }
+
+  .video-title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .channel-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .subscribe-btn {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+
+  .action-btn {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .suggestion-item {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .suggestion-thumbnail {
+    width: 100%;
+    height: auto;
+  }
+}
