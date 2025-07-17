@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import './Signup.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
-import {toast,ToastContainer} from 'react-toastify';
-import { Link } from 'react-router-dom';
-
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Signup(props) {
   const [signupField, setSignupField] = useState({
@@ -22,25 +21,33 @@ function Signup(props) {
       [name]: e.target.value
     });
   };
-//signup function
+
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:4000/auth/signup', signupField, { withCredentials: true });
-      if (response.data.success) {
+      const response = await axios.post(
+        'http://localhost:4000/auth/signup',
+        signupField,
+        {
+          withCredentials: true
+        }
+      );
+
+      if (response.status === 201) {
+        toast.success("Signup successful!");
         setTimeout(() => {
           navigate('/');
-        }, 100);
-        toast.success("Signup successful!");
+        }, 1000);
       } else {
         toast.error(response.data.message || "Signup failed");
       }
     } catch (error) {
       console.error("Error during signup:", error);
-      toast.error("An error occurred during signup");
+      toast.error(
+        error.response?.data?.message || "An error occurred during signup"
+      );
     }
-  } 
- 
+  };
 
   return (
     <div className={props.navvisible ? 'sign' : 'without'}>
@@ -84,15 +91,15 @@ function Signup(props) {
             onChange={(e) => handleOnChangeInput(e, 'password')}
           />
           <button type="submit" className="signup-btn">Sign Up</button>
-           <div>
-          
-                    <Link to="/"><button type="button" className="signup-btn">HOMPAGE</button></Link>
-                    </div>
-
+          <div>
+            <Link to="/">
+              <button type="button" className="signup-btn">HOMEPAGE</button>
+            </Link>
+          </div>
         </form>
       </div>
 
-      <ToastContainer/>
+      <ToastContainer />
     </div>
   );
 }
